@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChatGPT-like Python AI Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="{% static 'chatbot/style.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar (for future conversation management) -->
+    <div class="chat-sidebar">
+      <h2>Conversations</h2>
+      <ul id="conversation-list">
+        <li class="conversation-item active">Current Conversation</li>
+        <!-- Additional conversation items can be added dynamically -->
+      </ul>
+    </div>
+    <!-- Main chat area -->
+    <div class="chat-main">
+      <div class="chat-header">
+        <h1>PERSONAL AI ASSISTANT</h1>
+      </div>
+      <div class="chat-output" id="chat-output">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <textarea id="user-input" placeholder="Ask something..." onkeydown="handleKeyPress(event)"></textarea>
+        <button id="send-btn" onclick="sendMessage()">Send</button>
+      </div>
+      <!-- Response / Loading Indicator -->
+      <div class="response-bar" id="response-bar">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Link to the JS file -->
+  <script src="{% static 'chatbot/script.js' %}"></script>
+</body>
+</html>
